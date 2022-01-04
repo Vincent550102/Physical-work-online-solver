@@ -106,19 +106,20 @@ def cal(L1, cross_sectional_area, density_L1, density_L2, block_mass, L2):
 @ app.route('/', methods=['POST'])
 def ind():
     # L1, cross_sectional_area,density_L1,density_L2,block_mass,L2
-    if not request.values['L1'] or not request.values['cross_sectional_area'] or not request.values['density_L1'] or not request.values['density_L2'] or not request.values['block_mass'] or not request.values['L2']:
+    try:
+        L1 = float(request.values['L1'])
+        cross_sectional_area = float(request.values['cross_sectional_area'])
+        density_L1 = float(request.values['density_L1'])
+        density_L2 = float(request.values['density_L2'])
+        block_mass = float(request.values['block_mass'])
+        L2 = float(request.values['L2'])
+
+        answer_a, answer_b = cal(L1, cross_sectional_area,
+                                 density_L1, density_L2, block_mass, L2)
+        return render_template('index.html', **locals())
+    except:
         answer_a, answer_b = "你的參數", "還沒打完"
         return render_template('index.html', **locals())
-    L1 = float(request.values['L1'])
-    cross_sectional_area = float(request.values['cross_sectional_area'])
-    density_L1 = float(request.values['density_L1'])
-    density_L2 = float(request.values['density_L2'])
-    block_mass = float(request.values['block_mass'])
-    L2 = float(request.values['L2'])
-
-    answer_a, answer_b = cal(L1, cross_sectional_area,
-                             density_L1, density_L2, block_mass, L2)
-    return render_template('index.html', **locals())
 
 
 @ app.route('/', methods=['GET'])
@@ -127,5 +128,5 @@ def index():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='localhost', port=8080)
     pass
