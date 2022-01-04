@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer" />
+    <title>Question 10</title>
+
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css"
+        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <!-- Material Kit CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/gh/ncchen99/web-app-assets@3.2/Vincent55/shortUrl/assets/css/material-dashboard.css?v=2.1.2"
+        rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/gh/ncchen99/web-app-assets@3.2/Vincent55/shortUrl/assets/css/custom.css"
+        rel="stylesheet" />
+    <link rel="icon"
+        href="https://cdn.jsdelivr.net/gh/ncchen99/web-app-assets@3.2/Vincent55/shortUrl/assets/img/favicon.ico"
+        type="image/x-icon" />
+</head>
+
+<body>
+
+    <div class="wrapper ">
+        <div class="sidebar" data-color="purple" data-background-color="white">
+            <div class="logo">
+                <a href="" class="simple-text logo-normal">
+                    Question 10 online solver
+                </a>
+            </div>
+            <div class="sidebar-wrapper">
+                <ul class="nav">
+                    <li class="nav-item active  ">
+                        <a class="nav-link" href="#0">
+                            <i class="material-icons">dashboard</i>
+                            <p>Question 10</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-panel">
+            <!-- End Navbar -->
+            <div class="content">
+                <div class="container-fluid">
+                    <img src='https://i.imgur.com/pS4wrIP.png' width="900" height="350">
+                    <div class="card">
+                        <div class="card-header card-header-primary card-title">
+                            參數(照順序):
+                        </div>
+                        <div class="row">
+                            <div class="col-md-10">
+                                <div class="form-group">
+                                    <form method="POST" action="/" class="form-group">
+
+                                        <span class='input'>
+                                            <span>&nbsp&nbsp&nbspL1 (cm) =</span>
+                                            <input name="L1" id="L1" size="15" placeholder="L1">
+                                            <span></span>
+                                        </span>
+                                        <br>
+                                        <span class='input'>
+                                            <span>&nbsp&nbsp&nbsp截面積 (cm^2) = </span>
+                                            <input name="cross_sectional_area" id="cross_sectional_area" size="30"
+                                                placeholder="cross_sectional_area">
+                                            <span></span>
+                                        </span>
+                                        <br>
+                                        <span class='input'>
+                                            <span>&nbsp&nbsp&nbspdensity of L1 (g/cm^3) = </span>
+                                            <input name="density_L1" id="density_L1" size="30" placeholder="density_L1">
+                                            <span></span>
+                                        </span>
+                                        <br>
+                                        <span class='input'>
+                                            <span>&nbsp&nbsp&nbspdensity of L2 (g/cm^3) = </span>
+                                            <input name="density_L2" id="density_L2" size="30" placeholder="density_L2">
+                                            <span></span>
+                                        </span>
+                                        <br>
+                                        <span class='input'>
+                                            <span>&nbsp&nbsp&nbspmass of the block (kg) = </span>
+                                            <input name="block_mass" id="block_mass" size="30" placeholder="block_mass">
+                                            <span></span>
+                                        </span>
+                                        <br>
+                                        <span class='input'>
+                                            <span>&nbsp&nbsp&nbspL2 (cm) = </span>
+                                            <input name="L2" id="L2" size="30" placeholder="L2">
+                                            <span></span>
+                                        </span>
+                                        <br>
+                                        <div class="form-group my-btn-mg">
+                                            <button class="button" type="submit"
+                                                class="btn btn-primary pull-right">Shorten!</button>
+                                        </div>
+
+                                        </p>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            {% if answer_a %}
+            <div class="card">
+                <div class="card-header card-header-primary">
+                    <h4 class="card-title ">答案區</h4>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table" id="urlTable">
+                            <thead class=" text-primary">
+                                <tr>
+                                    <th>
+                                        題號
+                                    </th>
+                                    <th>
+                                        答案
+                                    </th>
+                                    <th>
+                                        單位
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>(a)
+                                    </td>
+                                    <td>
+                                        {{answer_a}}
+                                    </td>
+                                    <td>
+                                        Hz
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>(b)
+                                    </td>
+                                    <td>
+                                        {{answer_b}}
+                                    </td>
+                                    <td>
+                                        沒單位
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+
+</html>
