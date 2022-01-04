@@ -49,119 +49,157 @@
         <div class="main-panel">
             <!-- End Navbar -->
             <div class="content">
-                <div class="container-fluid">
-                    <img src='https://i.imgur.com/pS4wrIP.png' width="900" height="350">
-                    <div class="card">
-                        <div class="card-header card-header-primary card-title">
-                            參數(照順序):
-                        </div>
-                        <div class="row">
-                            <div class="col-md-10">
-                                <div class="form-group">
-                                    <form method="POST" action="/" class="form-group">
+                <div class="row">
+                    <div class="col-md-10">
+                        <div class="container-fluid">
+                            Wilyplus CH11,CH13,CH15-17 problems Question 10(Formula by 筍包, Web by Vincent55, Frontend
+                            suggest by ncchen)
+                            <br>
+                            <br>
+                            <img src='https://i.imgur.com/pS4wrIP.png' width="900" height="350">
+                            <br>
+                            <br>
+                            <br>
+                            <div class="card">
+                                <div class="card-header card-header-primary card-title">
+                                    參數(照順序):
+                                </div>
+                                <div class="card-body">
+                                    <form id="urlForm" method="POST" action="/">
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="form-group">
 
-                                        <span class='input'>
-                                            <span>&nbsp&nbsp&nbspL1 (cm) =</span>
-                                            <input name="L1" id="L1" size="15" placeholder="L1">
-                                            <span></span>
-                                        </span>
-                                        <br>
-                                        <span class='input'>
-                                            <span>&nbsp&nbsp&nbsp截面積 (cm^2) = </span>
-                                            <input name="cross_sectional_area" id="cross_sectional_area" size="30"
-                                                placeholder="cross_sectional_area">
-                                            <span></span>
-                                        </span>
-                                        <br>
-                                        <span class='input'>
-                                            <span>&nbsp&nbsp&nbspdensity of L1 (g/cm^3) = </span>
-                                            <input name="density_L1" id="density_L1" size="30" placeholder="density_L1">
-                                            <span></span>
-                                        </span>
-                                        <br>
-                                        <span class='input'>
-                                            <span>&nbsp&nbsp&nbspdensity of L2 (g/cm^3) = </span>
-                                            <input name="density_L2" id="density_L2" size="30" placeholder="density_L2">
-                                            <span></span>
-                                        </span>
-                                        <br>
-                                        <span class='input'>
-                                            <span>&nbsp&nbsp&nbspmass of the block (kg) = </span>
-                                            <input name="block_mass" id="block_mass" size="30" placeholder="block_mass">
-                                            <span></span>
-                                        </span>
-                                        <br>
-                                        <span class='input'>
-                                            <span>&nbsp&nbsp&nbspL2 (cm) = </span>
-                                            <input name="L2" id="L2" size="30" placeholder="L2">
-                                            <span></span>
-                                        </span>
-                                        <br>
-                                        <div class="form-group my-btn-mg">
-                                            <button class="button" type="submit"
-                                                class="btn btn-primary pull-right">Shorten!</button>
+                                                    <span class='input'>
+                                                        <label class="bmd-label-floating">&nbsp&nbsp&nbspL1 (cm)
+                                                            =</label>
+                                                        <input name="L1" id="L1" size="15" placeholder="L1">
+                                                        <span></span>
+                                                    </span>
+                                                    <br>
+                                                    <span class='input'>
+                                                        <label class="bmd-label-floating">&nbsp&nbsp&nbsp截面積 (cm^2) =
+                                                        </label>
+                                                        <input name="cross_sectional_area" id="cross_sectional_area"
+                                                            size="30" placeholder="cross_sectional_area">
+                                                        <span></span>
+                                                    </span>
+                                                    <br>
+                                                    <span class='input'>
+                                                        <label class="bmd-label-floating">&nbsp&nbsp&nbspdensity of L1
+                                                            (g/cm^3) =
+                                                        </label>
+                                                        <input name="density_L1" id="density_L1" size="30"
+                                                            placeholder="density_L1">
+                                                        <span></span>
+                                                    </span>
+                                                    <br>
+                                                    <span class='input'>
+                                                        <label class="bmd-label-floating">&nbsp&nbsp&nbspdensity of L2
+                                                            (g/cm^3) =
+                                                        </label>
+                                                        <input name="density_L2" id="density_L2" size="30"
+                                                            placeholder="density_L2">
+                                                        <span></span>
+                                                    </span>
+                                                    <br>
+                                                    <span class='input'>
+                                                        <label class="bmd-label-floating">&nbsp&nbsp&nbspmass of the
+                                                            block
+                                                            (kg) =
+                                                        </label>
+                                                        <input name="block_mass" id="block_mass" size="30"
+                                                            placeholder="block_mass">
+                                                        <span></span>
+                                                    </span>
+                                                    <br>
+                                                    <span class='input'>
+                                                        <label class="bmd-label-floating">&nbsp&nbsp&nbspL2 (cm) =
+                                                        </label>
+                                                        <input name="L2" id="L2" size="30" placeholder="L2">
+                                                        <span></span>
+                                                    </span>
+                                                    <br>
+                                                    <div class="col">
+                                                        <div class="form-group my-btn-mg">
+                                                            <button class="button btn btn-primary pull-center"
+                                                                style="float: right;" type="submit">
+                                                                計算!</button>
+                                                        </div>
+                                                    </div>
+
+
+
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"></div>
                                         </div>
-
-                                        </p>
                                     </form>
                                 </div>
                             </div>
+
+
+
+
+
+                            {% if answer_a %}
+                            <br>
+                            <br>
+                            <div class="card">
+                                <div class="card-header card-header-primary">
+                                    <h4 class="card-title ">答案區</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table" id="urlTable">
+                                            <thead class=" text-primary">
+                                                <tr>
+                                                    <th>
+                                                        題號
+                                                    </th>
+                                                    <th>
+                                                        答案
+                                                    </th>
+                                                    <th>
+                                                        單位
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>(a)
+                                                    </td>
+                                                    <td>
+                                                        {{answer_a}}
+                                                    </td>
+                                                    <td>
+                                                        Hz
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>(b)
+                                                    </td>
+                                                    <td>
+                                                        {{answer_b}}
+                                                    </td>
+                                                    <td>
+                                                        沒單位
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
                         </div>
-
                     </div>
                 </div>
             </div>
-
-            {% if answer_a %}
-            <div class="card">
-                <div class="card-header card-header-primary">
-                    <h4 class="card-title ">答案區</h4>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table" id="urlTable">
-                            <thead class=" text-primary">
-                                <tr>
-                                    <th>
-                                        題號
-                                    </th>
-                                    <th>
-                                        答案
-                                    </th>
-                                    <th>
-                                        單位
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>(a)
-                                    </td>
-                                    <td>
-                                        {{answer_a}}
-                                    </td>
-                                    <td>
-                                        Hz
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>(b)
-                                    </td>
-                                    <td>
-                                        {{answer_b}}
-                                    </td>
-                                    <td>
-                                        沒單位
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            {% endif %}
         </div>
     </div>
+    </div>
+
 </body>
 
 </html>

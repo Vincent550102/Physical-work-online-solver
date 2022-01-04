@@ -8,20 +8,19 @@ app = Flask(__name__)
 def cal(L1, cross_sectional_area, density_L1, density_L2, block_mass, L2):
     n1 = 0
     n2 = 0
-    print("這是第10題喔 不要看錯\n喔喔 這是測試 我也不保證會對\n\n-----------------------\n\n")
-    #L1 = float(input('輸入數據:\nL1 (cm) = '))
+    # L1 = float(input('輸入數據:\nL1 (cm) = '))
     L1 /= 100
-    #cross_sectional_area = float(input('\ncross-sectional area 截面積 (cm^2) = '))
+    # cross_sectional_area = float(input('\ncross-sectional area 截面積 (cm^2) = '))
     cross_sectional_area /= 10000
 
-    #density_L1 = float(input('\ndensity of L1 (g/cm^3) = '))
+    # density_L1 = float(input('\ndensity of L1 (g/cm^3) = '))
     density_L1 *= 1000
 
-    #density_L2 = float(input('\ndensity of L2 (g/cm^3) = '))
+    # density_L2 = float(input('\ndensity of L2 (g/cm^3) = '))
     density_L2 *= 1000
 
-    #block_mass = float(input('\nmass of the block (kg) = '))
-    #L2 = float(input('\nL2 (cm) = '))
+    # block_mass = float(input('\nmass of the block (kg) = '))
+    # L2 = float(input('\nL2 (cm) = '))
     L2 /= 100
 
     ratio = (L1 * sqrt(density_L1)) / (L2 * sqrt(density_L2))
@@ -45,8 +44,8 @@ def cal(L1, cross_sectional_area, density_L1, density_L2, block_mass, L2):
                     break
 
                 compare = n1 / n2
-
                 if (ratio == compare):
+                    temp = ratio - compare
                     correct_n1 = n1
                     correct_n2 = n2
                 elif (ratio > compare):
@@ -74,6 +73,7 @@ def cal(L1, cross_sectional_area, density_L1, density_L2, block_mass, L2):
                 compare = n1 / n2
 
                 if (ratio == compare):
+                    temp = ratio - compare
                     correct_n1 = n1
                     correct_n2 = n2
                 elif (ratio > compare):
@@ -103,9 +103,9 @@ def cal(L1, cross_sectional_area, density_L1, density_L2, block_mass, L2):
     return str(answer_a), str(answer_b)
 
 
-@app.route('/', methods=['POST'])
+@ app.route('/', methods=['POST'])
 def ind():
-    #L1, cross_sectional_area,density_L1,density_L2,block_mass,L2
+    # L1, cross_sectional_area,density_L1,density_L2,block_mass,L2
     if not request.values['L1'] or not request.values['cross_sectional_area'] or not request.values['density_L1'] or not request.values['density_L2'] or not request.values['block_mass'] or not request.values['L2']:
         answer_a, answer_b = "你的參數", "還沒打完"
         return render_template('index.html', **locals())
@@ -121,7 +121,7 @@ def ind():
     return render_template('index.html', **locals())
 
 
-@app.route('/', methods=['GET'])
+@ app.route('/', methods=['GET'])
 def index():
     return render_template('index.html')
 
